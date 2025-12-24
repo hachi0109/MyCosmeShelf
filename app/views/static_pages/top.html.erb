@@ -1,0 +1,32 @@
+<div class="lp-container">
+  <section class="lp-hero">
+    <h1 class="lp-logo">My Cosme Shelf</h1>
+    <p class="lp-tagline">
+      「あれ、まだあったっけ？」をなくして、<br>
+      毎日のメイクをもっと心地よく。
+    </p>
+    
+    <div class="lp-btn-group">
+      <%= link_to "はじめる（新規登録）", new_user_registration_path, class: "lp-btn lp-btn-primary" %>
+      <%= link_to "ログイン", new_user_session_path, class: "lp-btn lp-btn-outline" %>
+    </div>
+  </section>
+
+  <section class="lp-features">
+    <div class="feature-item">
+      <span class="feature-icon">✨</span>
+      <h3>在庫を一瞬で把握</h3>
+      <p>ジャンルごとの個数が見えるから、無駄な二重買いを卒業できます。</p>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🌿</span>
+      <h3>使用期限をお知らせ</h3>
+      <p>開封から時間が経ったコスメをチェック。肌への優しさを守ります。</p>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📝</span>
+      <h3>自分だけの使用感ログ</h3>
+      <p>マイ口コミ機能で自分の<br>肌質に合うコスメを揃えましょう。</p>
+    </div>
+  </section>
+</div>
