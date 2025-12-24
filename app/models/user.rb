@@ -6,5 +6,5 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :theme_color
 
-  validates :theme_color, numericality: { other_than: 1 }
+  validates :theme_color_id, numericality: { other_than: 1 }
 end
