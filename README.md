@@ -1,71 +1,52 @@
 ## users テーブル
 
-| Column             | Type    | Options     |
-| ------------------ | ------- | ----------- |
-| name               | string  | null: false |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false |
-| family_name        | string  | null: false |
-| first_name         | string  | null: false |
-| family_name_kana   | string  | null: false |
-| first_name_kana    | string  | null: false |
-| birthday           | date    | null: false |
+| Column             | Type     | Options     |
+| ------------------ | -------- | ----------- |
+| name               | string   | null: false |
+| email              | string   | null: false, unique: true |
+| encrypted_password | string   | null: false |
+| theme_color_id     | integer  | null: false |
 
 ### Association
 
-- has_many :items
-- has_many :orders
+- has_many :cosmetics
+- belongs_to_active_hash :theme_color
 
-## items テーブル
+## cosmetics テーブル
 
 | Column             | Type       | Options     |
 | ------------------ | ---------- | ----------- |
 | name               | string     | null: false |
-| price              | integer    | null: false |
-| explanation        | text       | null: false |
-| category_id        | integer    | null: false |
-| status_id          | integer    | null: false |
-| shipping_cost_id   | integer    | null: false |
-| prefecture_id      | integer    | null: false |
-| shipping_date_id   | integer    | null: false |
+| price              | integer    |             |
+| brand              | string     |             |
+| genre_id           | integer    | null: false |
+| color_id           | integer    |             |
+| usage_count_id     | integer    | null: false |
+| purchase_date      | date       |             |
+| open_date          | date       |             |
+| stock              | integer    | null: false |
+| official_url       | text       |             |
+| is_favorite        | boolean    | null: false, default: false |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :order
-- belongs_to_active_hash :category
-- belongs_to_active_hash :status
-- belongs_to_active_hash :shipping_cost
-- belongs_to_active_hash :prefecture
-- belongs_to_active_hash :shipping_date
+- has_many :comments
+- belongs_to_active_hash :genre
+- belongs_to_active_hash :color
+- belongs_to_active_hash :usage_count
 
-## orders テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| item    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :item
-- has_one :address
-
-## addresses テーブル
+## comments テーブル
 
 | Column        | Type       | Options     |
 | ------------- | ---------- | ------------|
-| post_code     | string     | null: false |
-| prefecture_id | integer    | null: false |
-| town          | string     | null: false |
-| street        | string     | null: false |
-| building      | string     |             |
-| phone         | string     | null: false |
-| order         | references | null: false, foreign_key: true |
+| cosmetic      | references | null: false, foreign_key: true |
+| content       | text       | null: false |
+| rating        | integer    | null: false |
+| status_id     | integer    | null: false |
 
 ### Association
 
-- belongs_to :order
-- belongs_to_active_hash :prefecture
+- belongs_to :cosmetic
+- belongs_to_active_hash :status
