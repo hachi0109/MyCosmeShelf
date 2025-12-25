@@ -1,2 +1,42 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <header class="user-header">
+    <div class="logo">MY COSME LOG</div>
+    <div class="user-nav">
+      <span class="user-name"><%= @user.name %> さん</span>
+      
+      <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link" %>
+    </div>
+  </header>
+
+  <section class="welcome-section">
+    <h2 class="welcome-msg">こんにちは、<%= @user.name %>さん ✨</h2>
+  </section>
+
+  <% if @expired_count > 0 %>
+    <div class="alert-box">
+      <div class="alert-title">⚠️ 使用期限のチェック</div>
+      <p>
+        開封から1年が経過したコスメが <strong><%= @expired_count %>件</strong> あります。<br>
+        お肌のために、状態をチェックしてみましょう。
+      </p>
+    </div>
+  <% end %>
+
+  <div class="section-title">
+    <span>現在の在庫状況</span>
+    <%= link_to "すべて見る ≫", cosmetics_path, class: "more-link" %>
+  </div>
+
+  <div class="stock-summary">
+    <% @stock_summary.each do |genre, count| %>
+      <div class="stock-card">
+        <span class="stock-count"><%= count %></span>
+        <span class="stock-label"><%= genre %></span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= link_to "新しくコスメを登録する", new_cosmetic_path, class: "btn-main" %>
+  </div>
+</div>

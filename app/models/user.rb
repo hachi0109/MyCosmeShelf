@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :theme_color
+  has_many :cosmetics
 
   validates :theme_color_id, numericality: { other_than: 1 }
 end
