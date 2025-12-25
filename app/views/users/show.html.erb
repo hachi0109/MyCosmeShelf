@@ -1,0 +1,57 @@
+<div class="container">
+  <header class="user-header">
+    <div class="logo">My Cosme Shelf</div>
+    <div class="user-nav">
+      <span class="user-name"><%= @user.name %> さん</span>
+      
+      <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link" %>
+    </div>
+  </header>
+
+  <section class="welcome-section">
+    <h2 class="welcome-msg">こんにちは、<%= @user.name %>さん ✨</h2>
+  </section>
+
+  <% if @expired_count > 0 %>
+    <div class="alert-box">
+      <div class="alert-title">⚠️ 使用期限のチェック</div>
+      <p>
+        開封から1年が経過したコスメが <strong><%= @expired_count %>件</strong> あります。<br>
+        お肌のために、状態をチェックしてみましょう。
+      </p>
+    </div>
+  <% end %>
+
+  <div class="section-title">
+    <span>現在の在庫状況</span>
+    <%= link_to "すべて見る ≫", cosmetics_path, class: "more-link" %>
+  </div>
+
+  <div class="stock-summary">
+    <% @stock_summary.each do |genre, count| %>
+      <div class="stock-card">
+        <span class="stock-count"><%= count %></span>
+        <span class="stock-label"><%= genre %></span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= link_to "新しくコスメを登録する", new_cosmetic_path, class: "btn-main" %>
+  </div>
+</div>
+
+<style>
+  :root {
+    --main-color: <%= @theme.name == 'グリーン' ? '#78978b' : 
+                      @theme.name == 'ピンク' ? '#d8a3a3' : 
+                      @theme.name == 'ブルー' ? '#8ba2ad' : 
+                      @theme.name == 'ミルクティー' ? '#bcaaa4' : '#d8a3a3' %>;
+    --main-bg: <%= @theme.name == 'グリーン' ? '#f4f7f6' : 
+                   @theme.name == 'ピンク' ? '#fdf8f8' : 
+                   @theme.name == 'ブルー' ? '#f4f6f7' : 
+                   @theme.name == 'ミルクティー' ? '#f7f5f4' : '#fdf8f8' %>;
+    --text-color: #5a5a5a;
+    --accent-color: #e57373; /* 警告用などのアクセント */
+    }
+</style>
