@@ -57,18 +57,7 @@
   }
 
 /* マイページ */
-  :root {
-    --main-color: <%= @theme.name == 'ミントグリーン' ? '#78978b' : 
-                     @theme.name == 'くすみピンク' ? '#d8a3a3' : 
-                     @theme.name == 'サックスブルー' ? '#8ba2ad' : 
-                     @theme.name == 'ミルクティー' ? '#bcaaa4' : '#d8a3a3' %>;
-    --main-bg: <%= @theme.name == 'ミントグリーン' ? '#f4f7f6' : 
-                   @theme.name == 'くすみピンク' ? '#fdf8f8' : 
-                   @theme.name == 'サックスブルー' ? '#f4f6f7' : 
-                   @theme.name == 'ミルクティー' ? '#f7f5f4' : '#fdf8f8' %>;
-    --text-color: #5a5a5a;
-    --accent-color: #e57373; /* 警告用などのアクセント */
-  }
+  
 
   body {
     background-color: var(--main-bg);

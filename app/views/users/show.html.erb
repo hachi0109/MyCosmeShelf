@@ -1,6 +1,6 @@
 <div class="container">
   <header class="user-header">
-    <div class="logo">MY COSME LOG</div>
+    <div class="logo">My Cosme Shelf</div>
     <div class="user-nav">
       <span class="user-name"><%= @user.name %> さん</span>
       
@@ -40,3 +40,18 @@
     <%= link_to "新しくコスメを登録する", new_cosmetic_path, class: "btn-main" %>
   </div>
 </div>
+
+<style>
+  :root {
+    --main-color: <%= @theme.name == 'グリーン' ? '#78978b' : 
+                      @theme.name == 'ピンク' ? '#d8a3a3' : 
+                      @theme.name == 'ブルー' ? '#8ba2ad' : 
+                      @theme.name == 'ミルクティー' ? '#bcaaa4' : '#d8a3a3' %>;
+    --main-bg: <%= @theme.name == 'グリーン' ? '#f4f7f6' : 
+                   @theme.name == 'ピンク' ? '#fdf8f8' : 
+                   @theme.name == 'ブルー' ? '#f4f6f7' : 
+                   @theme.name == 'ミルクティー' ? '#f7f5f4' : '#fdf8f8' %>;
+    --text-color: #5a5a5a;
+    --accent-color: #e57373; /* 警告用などのアクセント */
+    }
+</style>
