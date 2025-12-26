@@ -25,9 +25,9 @@ class CosmeticsController < ApplicationController
 
   def cosmetic_params
     params.require(:cosmetic).permit(
-      :name, :brand, :price, :genre_id, :color_id, 
+      :image, :name, :brand, :price, :genre_id, :color_id, 
       :usage_count_id, :purchase_date, :open_date, 
       :stock, :official_url, :is_favorite
-    )
+    ).merge(user_id: current_user.id)
   end
 end

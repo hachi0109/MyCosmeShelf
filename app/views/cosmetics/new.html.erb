@@ -18,13 +18,25 @@
     <% end %>
 
     <div class="field">
+    <%= f.label :name, "写真" %>
+      <span class="image-file"></span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </div>
+
+    <div class="field">
       <%= f.label :name, "コスメ名" %><span class="required">必須</span>
       <%= f.text_field :name, placeholder: "例：メルティリップ" %>
     </div>
 
-    <div class="field">
+    <div class="row-fields">
+      <div class="field half">
       <%= f.label :brand, "ブランド" %>
       <%= f.text_field :brand, placeholder: "例：キャンメイク" %>
+      </div>
+      <div class="field half">
+        <%= f.label :price, "価格" %>
+        <%= f.number_field :price %>
+      </div>
     </div>
 
     <div class="row-fields">
@@ -51,17 +63,19 @@
 
     <div class="row-fields">
       <div class="field half">
-        <%= f.label :open_date, "開封日" %>
+        <%= f.label :purchase_date, "購入日" %>
         <%= f.date_field :open_date %>
       </div>
       <div class="field half">
-        <%= f.label :price, "価格" %>
-        <%= f.number_field :price %>
+        <%= f.label :open_date, "開封日" %>
+        <%= f.date_field :open_date %>
       </div>
     </div>
 
+    
+
     <div class="field">
-      <%= f.label :official_url, "公式サイトURL" %>
+      <%= f.label :official_url, "公式・通販などサイトURL" %>
       <%= f.url_field :official_url, placeholder: "https://..." %>
     </div>
 
