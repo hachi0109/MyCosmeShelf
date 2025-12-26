@@ -1,0 +1,103 @@
+<div class="container">
+  <header class="form-header">
+    <%= link_to "≪ 戻る", user_root_path, class: "back-link" %>
+    <h1 class="page-title">コスメ登録</h1>
+    <div class="spacer"></div>
+  </header>
+
+  <%= form_with model: @cosmetic, local: true, class: "cosme-form" do |f| %>
+    <% if @cosmetic.errors.any? %>
+      <div class="error-messages">
+        <p>入力内容にエラーがあります：</p>
+        <ul>
+          <% @cosmetic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+    <%= f.label :name, "写真" %>
+      <span class="image-file"></span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name, "コスメ名" %><span class="required">必須</span>
+      <%= f.text_field :name, placeholder: "例：メルティリップ" %>
+    </div>
+
+    <div class="row-fields">
+      <div class="field half">
+      <%= f.label :brand, "ブランド" %>
+      <%= f.text_field :brand, placeholder: "例：キャンメイク" %>
+      </div>
+      <div class="field half">
+        <%= f.label :price, "価格" %>
+        <%= f.number_field :price %>
+      </div>
+    </div>
+
+    <div class="row-fields">
+      <div class="field half">
+        <%= f.label :genre_id, "カテゴリー" %><span class="required">必須</span>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
+      </div>
+      <div class="field half">
+        <%= f.label :color_id, "カラー" %><br>
+        <%= f.collection_select :color_id, Color.all, :id, :name, { prompt: "選択してください" } %>
+      </div>
+    </div>
+
+    <div class="row-fields">
+      <div class="field half">
+        <%= f.label :usage_count_id, "使用状況" %><span class="required">必須</span>
+        <%= f.collection_select :usage_count_id, UsageCount.all, :id, :name, { prompt: "選択してください" } %>
+      </div>
+      <div class="field half">
+        <%= f.label :stock, "在庫数" %><span class="required">必須</span>
+        <%= f.number_field :stock, min: 0 %>
+      </div>
+    </div>
+
+    <div class="row-fields">
+      <div class="field half">
+        <%= f.label :purchase_date, "購入日" %>
+        <%= f.date_field :open_date %>
+      </div>
+      <div class="field half">
+        <%= f.label :open_date, "開封日" %>
+        <%= f.date_field :open_date %>
+      </div>
+    </div>
+
+    
+
+    <div class="field">
+      <%= f.label :official_url, "公式・通販などサイトURL" %>
+      <%= f.url_field :official_url, placeholder: "https://..." %>
+    </div>
+
+    <div class="field checkbox-field">
+      <%= f.check_box :is_favorite %>
+      <%= f.label :is_favorite, "❤️ お気に入りに追加" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する", class: "submit-btn" %>
+    </div>
+  <% end %>
+</div>
+
+<style>
+:root {
+    --main-color: <%= @theme.name == 'グリーン' ? '#78978b' : 
+                     @theme.name == 'ピンク' ? '#d8a3a3' : 
+                     @theme.name == 'ブルー' ? '#8ba2ad' : 
+                     @theme.name == 'ミルクティー' ? '#bcaaa4' : '#d8a3a3' %>;
+    --main-bg: #fff;
+    --text-color: #5a5a5a;
+    --border-color: #eee;
+      }
+</style>
