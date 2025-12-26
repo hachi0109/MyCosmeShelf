@@ -7,5 +7,7 @@ class UsersController < ApplicationController
     all_cosmetics = @user.cosmetics
     @expired_count = all_cosmetics.expired.count
     @stock_summary = all_cosmetics.group_by(&:genre).transform_values(&:count)
+
+    @recent_cosmetics = all_cosmetics.order(created_at: :desc).limit(2)
   end
 end
