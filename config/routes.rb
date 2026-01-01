@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'mypage', to: 'users#show', as: :user_root
   # コスメ関連
   resources :cosmetics, only: [:index, :new, :create]
+  resources :users, only: :show
 end
