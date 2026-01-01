@@ -62,11 +62,15 @@
   </div>
 
   <div class="stock-summary">
-    <% @stock_summary.each do |genre, count| %>
-      <div class="stock-card">
-        <span class="stock-count"><%= count %></span>
-        <span class="stock-label"><%= genre %></span>
-      </div>
+    <% # 表示したい主要ジャンルのID（2:化粧水, 5:下地, 6:ファンデ, 13:リップ）を指定 %>
+    <% target_ids = [2, 5, 6, 13] %>
+    <% target_ids.each do |genre_id| %>
+      <% genre = Genre.find(genre_id) %>
+      <% stock_count = @user.cosmetics.where(genre_id: genre.id).sum(:stock) %>
+      <%= link_to cosmetics_path(genre_id: genre.id), class: "stock-card" do %>
+        <span class="stock-count"><%= stock_count %></span>
+        <span class="stock-label"><%= genre.name %></span>
+      <% end %>
     <% end %>
   </div>
 
