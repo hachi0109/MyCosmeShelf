@@ -30,6 +30,21 @@ class CosmeticsController < ApplicationController
     @theme = current_user.theme_color
   end
 
+  def edit
+    @cosmetic = Cosmetic.find(params[:id])
+    @theme = current_user.theme_color
+  end
+
+  def update
+    @cosmetic = Cosmetic.find(params[:id])
+    if @cosmetic.update(cosmetic_params)
+      redirect_to cosmetic_path(@cosmetic), notice: "コスメ情報を更新しました！"
+    else
+      @theme = current_user.theme_color
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def cosmetic_params
