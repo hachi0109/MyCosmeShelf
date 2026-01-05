@@ -191,6 +191,11 @@
     margin-bottom: 30px;
   }
 
+  .recent-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .recent-card {
     background: white;
     padding: 15px;

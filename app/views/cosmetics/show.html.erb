@@ -1,0 +1,75 @@
+<div class="container">
+  <header class="page-header">
+    <%= link_to "≪ 一覧に戻る", cosmetics_path, class: "back-link" %>
+    <h1 class="page-title">コスメ詳細</h1>
+    <% if @cosmetic.is_favorite %>
+      <span class="favorite-icon">♥</span>
+    <% end %>
+  </header>
+
+  <div class="cosmetic-detail">
+    <div class="detail-image-wrapper">
+      <% if @cosmetic.image.attached? %>
+        <%= image_tag @cosmetic.image, class: "detail-image" %>
+      <% else %>
+        <div class="no-image-placeholder">No Photo</div>
+      <% end %>
+    </div>
+
+    <div class="detail-content">
+      <div class="detail-header">
+        <span class="detail-genre"><%= @cosmetic.genre&.name %></span>
+        <h2 class="detail-name"><%= @cosmetic.name %></h2>
+        <p class="detail-brand"><%= @cosmetic.brand %></p>
+      </div>
+
+      <div class="detail-items">
+        <div class="detail-item">
+          <span class="item-label">価格</span>
+          <span class="item-value"><%= @cosmetic.price ? "¥#{number_with_delimiter(@cosmetic.price)}" : '-' %></span>
+        </div>
+        <div class="detail-item">
+          <span class="item-label">カラー</span>
+          <span class="item-value"><%= @cosmetic.color_id ? @cosmetic.color&.name : '-' %></span>
+        </div>
+        <div class="detail-item">
+          <span class="item-label">在庫</span>
+          <span class="item-value"><%= @cosmetic.stock %></span>
+        </div>
+        <div class="detail-item">
+          <span class="item-label">購入日</span>
+          <span class="item-value"><%= @cosmetic.purchase_date&.strftime("%Y.%m.%d") || '-' %></span>
+        </div>
+        <div class="detail-item">
+          <span class="item-label">開封日</span>
+          <span class="item-value"><%= @cosmetic.open_date&.strftime("%Y.%m.%d") || '-' %></span>
+        </div>
+        <% if @cosmetic.official_url.present? %>
+          <div class="detail-item">
+            <span class="item-label">URL</span>
+            <span class="item-value"><%= link_to "公式サイトへ", @cosmetic.official_url, target: "_blank", rel: "noopener", class: "external-link" %></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <%= link_to "編集", edit_cosmetic_path(@cosmetic), class: "btn btn-secondary" %>
+    <%= link_to "削除", cosmetic_path(@cosmetic), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+  </div>
+</div>
+
+<style>
+  :root {
+    --main-color: <%= @theme.name == 'グリーン' ? '#78978b' : 
+                      @theme.name == 'ピンク' ? '#d8a3a3' : 
+                      @theme.name == 'ブルー' ? '#8ba2ad' : 
+                      @theme.name == 'ミルクティー' ? '#bcaaa4' : '#d8a3a3' %>;
+    --main-bg: <%= @theme.name == 'グリーン' ? '#f4f7f6' : 
+                   @theme.name == 'ピンク' ? '#fdf8f8' : 
+                   @theme.name == 'ブルー' ? '#f4f6f7' : 
+                   @theme.name == 'ミルクティー' ? '#f7f5f4' : '#fdf8f8' %>;
+    --text-color: #5a5a5a;
+  }
+</style>

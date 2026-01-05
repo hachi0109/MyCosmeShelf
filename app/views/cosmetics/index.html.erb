@@ -15,6 +15,7 @@
   <div class="cosmetics-grid">
     <% if @cosmetics.any? %>
       <% @cosmetics.each do |cosmetic| %>
+        <%= link_to cosmetic_path(cosmetic), class: "cosmetic-card-link" do %>
         <div class="cosmetic-card">
           <div class="card-image-wrapper">
             <% if cosmetic.image.attached? %>
@@ -35,6 +36,7 @@
             </div>
           </div>
         </div>
+        <% end %>
       <% end %>
     <% else %>
       <div class="empty-state">
@@ -60,77 +62,4 @@
                    @theme.name == 'ミルクティー' ? '#f7f5f4' : '#fdf8f8' %>;
     --text-color: #5a5a5a;
   }
-
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--main-bg);
-    min-height: 100vh;
-    color: var(--text-color);
-    position: relative;
-  }
-
-  .page-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  .back-link {
-    text-decoration: none;
-    color: #999;
-    font-size: 14px;
-  }
-
-  .page-title {
-    font-size: 18px;
-    color: var(--main-color);
-    margin: 0;
-  }
-
-  .filter-banner {
-    background-color: #fff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    font-size: 14px;
-  }
-
-  .filter-clear {
-    color: #999;
-    text-decoration: none;
-    font-size: 12px;
-  }
-
-  .cosmetics-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .cosmetic-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  /* マイページと同じカードデザインを適用 */
-  .card-image-wrapper { height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .cosme-image { width: 100%; height: 100%; object-fit: cover; }
-  .no-image-placeholder { color: #ccc; font-size: 12px; }
-  .card-info { padding: 10px; }
-  .card-genre { font-size: 10px; background: var(--main-color); color: #fff; padding: 2px 6px; border-radius: 4px; }
-  .card-name { font-size: 14px; font-weight: bold; margin: 5px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .card-brand { font-size: 12px; color: #888; margin-bottom: 5px; }
-  .card-meta { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; }
-
-  /* 右下の追加ボタン */
-  .fab-btn { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background: var(--main-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 </style>
