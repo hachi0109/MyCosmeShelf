@@ -31,6 +31,7 @@
   <div class="recent-list">
     <% if @recent_cosmetics.any? %>
     <% @recent_cosmetics.each do |cosmetic| %>
+      <%= link_to cosmetic_path(cosmetic), class: "recent-card-link" do %>
       <div class="recent-card">
         <div class="card-image-wrapper">
           <% if cosmetic.image.attached? %>
@@ -50,6 +51,7 @@
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
     <% else %>
       <p class="no-data">まだ登録されたコスメはありません。</p>

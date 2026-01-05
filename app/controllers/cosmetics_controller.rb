@@ -25,6 +25,11 @@ class CosmeticsController < ApplicationController
     end
   end
 
+  def show
+    @cosmetic = Cosmetic.find(params[:id])
+    @theme = current_user.theme_color
+  end
+
   private
 
   def cosmetic_params
