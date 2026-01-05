@@ -45,6 +45,12 @@ class CosmeticsController < ApplicationController
     end
   end
 
+  def destroy
+    cosmetic = Cosmetic.find(params[:id])
+    cosmetic.destroy
+    redirect_to cosmetics_path, notice: "コスメを削除しました"
+  end
+
   private
 
   def cosmetic_params
