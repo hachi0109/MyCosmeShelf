@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: 'static_pages#top'
   get 'mypage', to: 'users#show', as: :user_root
   # コスメ関連
-  resources :cosmetics, only: [:index, :new, :create]
+  resources :cosmetics, only: [:index, :new, :create, :edit, :update]
   resources :users, only: :show
 end
