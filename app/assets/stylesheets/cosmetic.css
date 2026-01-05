@@ -171,3 +171,202 @@
 .stock-card{
   text-decoration: none;
 }
+
+/* フォームスタイル */
+.cosme-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field input[type="date"],
+.field input[type="url"],
+.field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.row-fields {
+  display: flex;
+  gap: 15px;
+}
+
+.field.half {
+  flex: 1;
+}
+
+.required {
+  color: #e57373;
+  font-size: 11px;
+  margin-left: 5px;
+  background: #ffebee;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-field label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.error-messages {
+  background: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.error-messages ul {
+  margin: 5px 0 0;
+  padding-left: 20px;
+}
+
+/* 一覧画面スタイル */
+.filter-banner {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+.filter-clear {
+  color: #999;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.cosmetics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.cosmetic-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cosmetic-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.cosmetic-card .card-image-wrapper {
+  height: 150px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cosme-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cosmetic-card .no-image-placeholder {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.card-info {
+  padding: 10px;
+}
+
+.card-genre {
+  font-size: 10px;
+  background: var(--main-color);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.card-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-brand {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.fab-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--main-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
