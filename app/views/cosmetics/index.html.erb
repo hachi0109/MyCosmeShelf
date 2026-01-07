@@ -14,7 +14,10 @@
   <% if params[:genre_id].present? %>
     <% genre = Genre.find(params[:genre_id]) %>
     <div class="filter-banner">
-      <span><strong><%= genre.name %></strong> で絞り込み中</span>
+      <span>
+        <strong><%= genre.name %></strong>
+        <span style="font-size: 0.9em; margin-left: 8px; color: #666;">(在庫合計: <strong><%= @total_stock %></strong>)</span>
+      </span>
       <%= link_to "× 解除", cosmetics_path, class: "filter-clear" %>
     </div>
   <% end %>

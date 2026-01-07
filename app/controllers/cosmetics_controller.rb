@@ -6,6 +6,7 @@ class CosmeticsController < ApplicationController
     @genres = Genre.all
     if params[:genre_id].present?
       @cosmetics = @cosmetics.where(genre_id: params[:genre_id])
+      @total_stock = @cosmetics.sum(:stock)
     end
   end
 
