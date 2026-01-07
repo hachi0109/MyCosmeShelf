@@ -6,6 +6,7 @@ class CosmeticsController < ApplicationController
     @genres = Genre.all
     if params[:genre_id].present?
       @cosmetics = @cosmetics.where(genre_id: params[:genre_id])
+      @total_stock = @cosmetics.sum(:stock)
     end
   end
 
@@ -50,6 +51,16 @@ class CosmeticsController < ApplicationController
     cosmetic = Cosmetic.find(params[:id])
     cosmetic.destroy
     redirect_to cosmetics_path, notice: "コスメを削除しました"
+  end
+
+  def consume
+    @cosmetic = Cosmetic.find(params[:id])
+    if @cosmetic.stock.to_i > 0
+      @cosmetic.update(stock: @cosmetic.stock - 1)
+      redirect_to cosmetic_path(@cosmetic), notice: "使い切りました！在庫を1つ減らしました。"
+    else
+      redirect_to cosmetic_path(@cosmetic), alert: "在庫がもうありません。"
+    end
   end
 
   private
