@@ -4,6 +4,13 @@
     <h1 class="page-title">コスメ一覧</h1>
   </header>
 
+  <div class="genre-nav">
+    <%= link_to "すべて", cosmetics_path, class: "genre-pill #{'active' unless params[:genre_id].present?}" %>
+    <% @genres.each do |genre| %>
+      <%= link_to genre.name, cosmetics_path(genre_id: genre.id), class: "genre-pill #{'active' if params[:genre_id].to_i == genre.id}" %>
+    <% end %>
+  </div>
+
   <% if params[:genre_id].present? %>
     <% genre = Genre.find(params[:genre_id]) %>
     <div class="filter-banner">
