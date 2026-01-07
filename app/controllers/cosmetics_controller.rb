@@ -8,6 +8,10 @@ class CosmeticsController < ApplicationController
       @cosmetics = @cosmetics.where(genre_id: params[:genre_id])
       @total_stock = @cosmetics.sum(:stock)
     end
+
+    if params[:filter] == 'expired'
+      @cosmetics = @cosmetics.where("stock > 0 AND open_date <= ?", Date.today - 1.year)
+    end
   end
 
   def new

@@ -28,6 +28,41 @@
   margin: 0;
 }
 
+/* アラート通知 */
+.alert-box {
+  background-color: #fff3e0;
+  border: 1px solid #ffcc80;
+  color: #e65100;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.alert-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+/* 折りたたみ */
+details summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.alert-content {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ffcc80;
+}
+
 /* 詳細カード */
 .cosmetic-detail {
   background: #fff;
@@ -313,6 +348,12 @@
   align-items: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   font-size: 14px;
+}
+
+.filter-banner.alert-mode {
+  background-color: #fff3e0;
+  border: 1px solid #ffcc80;
+  color: #e65100;
 }
 
 .filter-clear {

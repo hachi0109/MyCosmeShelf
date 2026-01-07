@@ -14,11 +14,18 @@
 
   <% if @expired_count > 0 %>
     <div class="alert-box">
-      <div class="alert-title">⚠️ 使用期限のチェック</div>
-      <p>
-        開封から1年が経過したコスメが <strong><%= @expired_count %>件</strong> あります。<br>
-        お肌のために、状態をチェックしてみましょう。
-      </p>
+      <details>
+        <summary class="alert-summary">
+          <span class="alert-title">⚠️ 使用期限のチェック (<%= @expired_count %>件)</span>
+          <span class="toggle-icon">▼</span>
+        </summary>
+        <div class="alert-content">
+          <p>開封から1年が経過したコスメがあります。<br>お肌のために、状態をチェックしてみましょう。</p>
+          <div style="margin-top: 10px; text-align: right;">
+            <%= link_to "期限切れコスメをチェック ≫", cosmetics_path(filter: 'expired'), style: "color: #e65100; text-decoration: underline; font-weight: bold;" %>
+          </div>
+        </div>
+      </details>
     </div>
   <% end %>
   

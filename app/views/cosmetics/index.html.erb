@@ -11,7 +11,14 @@
     <% end %>
   </div>
 
-  <% if params[:genre_id].present? %>
+  <% if params[:filter] == 'expired' %>
+    <div class="filter-banner alert-mode">
+      <span>
+        <strong>⚠️ 使用期限切れ (1年以上経過)</strong>
+      </span>
+      <%= link_to "× 解除", cosmetics_path, class: "filter-clear" %>
+    </div>
+  <% elsif params[:genre_id].present? %>
     <% genre = Genre.find(params[:genre_id]) %>
     <div class="filter-banner">
       <span>
