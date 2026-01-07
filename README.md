@@ -36,6 +36,7 @@ https://my-cosme-shelf.onrender.com/
 [![Image from Gyazo](https://i.gyazo.com/20eaa1784d454c6458e3389166d38d5a.png)](https://gyazo.com/20eaa1784d454c6458e3389166d38d5a)
 
 # 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/8176d68d3d61e05b58205af5581f27ab.png)](https://gyazo.com/8176d68d3d61e05b58205af5581f27ab)
 
 # 開発環境
 - フロントエンド：HTML / CSS / JavaScript
