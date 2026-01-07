@@ -1,0 +1,9 @@
+<div class="comment-card" id="<%= dom_id(comment) %>">
+  <div class="comment-meta">
+    <span class="comment-rating">★<%= comment.rating %></span>
+    <span class="comment-status"><%= comment.status&.name %></span>
+    <span class="comment-date"><%= comment.created_at.strftime("%Y.%m.%d") %></span>
+    <%= link_to "削除", cosmetic_comment_path(comment.cosmetic, comment), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "comment-delete-link" %>
+  </div>
+  <p class="comment-content"><%= safe_join(comment.content.split("\n"), tag.br) %></p>
+</div>

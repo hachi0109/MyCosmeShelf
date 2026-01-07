@@ -6,6 +6,7 @@ class Cosmetic < ApplicationRecord
   belongs_to :usage_count
 
   has_one_attached :image
+  has_many :comments, dependent: :destroy
 
   validates :name, :genre_id, :stock, presence: true
   # 「開封日(opened_at)が1年以上前」のデータを取得する定義

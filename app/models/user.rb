@@ -6,6 +6,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :theme_color
   has_many :cosmetics
+  has_many :comments, through: :cosmetics
 
   validates :theme_color_id, numericality: { other_than: 1 }
 end
