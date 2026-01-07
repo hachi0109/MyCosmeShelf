@@ -51,6 +51,20 @@
           </div>
         <% end %>
       </div>
+
+      <div class="comments-section">
+        <h3 class="comments-title">マイ口コミ・メモ</h3>
+        
+        <div class="comments-list" id="comments-list">
+          <% if @comments.any? %>
+            <%= render @comments %>
+          <% else %>
+            <p class="no-comments" id="no-comments-msg">まだ口コミはありません。</p>
+          <% end %>
+        </div>
+
+        <%= render "comments/form", cosmetic: @cosmetic, comment: @comment %>
+      </div>
     </div>
   </div>
 

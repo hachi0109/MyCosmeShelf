@@ -1,0 +1,14 @@
+<%= form_with(model: [cosmetic, comment], id: "comment-form", class: "comment-form") do |f| %>
+  <div class="row-fields">
+    <div class="field half">
+      <%= f.label :rating, "評価 (1-5)" %>
+      <%= f.number_field :rating, min: 1, max: 5, value: 3 %>
+    </div>
+    <div class="field half">
+      <%= f.label :status_id, "リピート" %>
+      <%= f.collection_select :status_id, Status.all, :id, :name, { prompt: "選択してください" } %>
+    </div>
+  </div>
+  <%= f.text_area :content, placeholder: "使用感やメモを記録しよう", rows: 3, class: "comment-input" %>
+  <%= f.submit "口コミを投稿", class: "btn btn-comment-submit" %>
+<% end %>

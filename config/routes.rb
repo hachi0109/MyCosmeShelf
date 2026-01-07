@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     member do
       patch :consume
     end
+    resources :comments, only: [:create, :destroy]
   end
   resources :users, only: :show
 end

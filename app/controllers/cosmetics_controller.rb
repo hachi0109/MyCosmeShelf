@@ -34,6 +34,8 @@ class CosmeticsController < ApplicationController
   def show
     @cosmetic = Cosmetic.find(params[:id])
     @theme = current_user.theme_color
+    @comment = Comment.new
+    @comments = @cosmetic.comments.order(created_at: :desc)
   end
 
   def edit
