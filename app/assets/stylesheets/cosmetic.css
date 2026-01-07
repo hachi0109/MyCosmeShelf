@@ -163,6 +163,17 @@
   color: #fff;
 }
 
+.btn-consume {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.btn-disabled {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
 .favorite-icon {
   color: #ff8a80;
   font-size: 20px;
@@ -326,6 +337,15 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 在庫切れ（使い切り） */
+.cosmetic-card.out-of-stock {
+  opacity: 0.6;
+}
+
+.cosmetic-card.out-of-stock .card-image-wrapper {
+  filter: grayscale(100%);
 }
 
 .cosmetic-card .card-image-wrapper {

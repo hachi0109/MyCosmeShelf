@@ -55,6 +55,11 @@
   </div>
 
   <div class="action-buttons">
+    <% if @cosmetic.stock.to_i > 0 %>
+      <%= link_to "使い切り", consume_cosmetic_path(@cosmetic), data: { turbo_method: :patch }, class: "btn btn-consume" %>
+    <% else %>
+      <span class="btn btn-disabled">在庫なし</span>
+    <% end %>
     <%= link_to "編集", edit_cosmetic_path(@cosmetic), class: "btn btn-secondary" %>
     <%= link_to "削除", cosmetic_path(@cosmetic), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
   </div>
