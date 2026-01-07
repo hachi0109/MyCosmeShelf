@@ -3,6 +3,7 @@ class CosmeticsController < ApplicationController
   def index
     @cosmetics = current_user.cosmetics.order(created_at: :desc)
     @theme = current_user.theme_color
+    @genres = Genre.all
     if params[:genre_id].present?
       @cosmetics = @cosmetics.where(genre_id: params[:genre_id])
     end
