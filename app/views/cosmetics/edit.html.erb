@@ -19,7 +19,12 @@
 
     <div class="field">
       <%= f.label :image, "写真" %>
-      <%= f.file_field :image, class: "form-control-file" %>
+      <%= f.file_field :image, class: "form-control-file", id: "cosmetic_image" %>
+      <div id="image-preview">
+        <% if @cosmetic.image.attached? %>
+          <%= image_tag @cosmetic.image, style: "max-width: 200px; margin-top: 10px; border-radius: 5px;" %>
+        <% end %>
+      </div>
     </div>
 
     <div class="field">
