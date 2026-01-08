@@ -19,7 +19,8 @@
 
     <div class="field">
       <%= f.label :image, "写真" %>
-      <%= f.file_field :image, class: "form-control-file" %>
+      <%= f.file_field :image, class: "form-control-file", id: "cosmetic_image" %>
+      <div id="image-preview"></div>
     </div>
 
     <div class="field">
