@@ -22,22 +22,27 @@ https://my-cosme-shelf.onrender.com/
 
 ## 2. コスメの登録
 マイページまたは一覧画面の「新しくコスメを登録する」ボタンから、手持ちのコスメを登録します。写真、商品名、ブランド、カテゴリ、購入日・開封日、在庫数などを入力できます。
+
 [![Image from Gyazo](https://i.gyazo.com/8c0c9af54b9b1816ee8f76e753fd1b9c.gif)](https://gyazo.com/8c0c9af54b9b1816ee8f76e753fd1b9c)
 
 ## 3. 在庫・期限の管理
 - **一覧画面**: 登録したコスメを一覧で確認できます。カテゴリごとの絞り込みや、使用期限切れ（開封から1年以上経過）コスメのチェックが可能です。
+
 [![Image from Gyazo](https://i.gyazo.com/23d7152f4b2e1200c9fb5304c36db98d.gif)](https://gyazo.com/23d7152f4b2e1200c9fb5304c36db98d)
 
 - **詳細画面**: 「使い切り」ボタンで在庫数を減らすことができます。在庫が0になると一覧画面でグレーアウトされます。
+
 [![Image from Gyazo](https://i.gyazo.com/c9b45ec35cb13d6f5475152dbd1e1fbc.gif)](https://gyazo.com/c9b45ec35cb13d6f5475152dbd1e1fbc)
 
 - **マイページ**: よく使うカテゴリの在庫総数や、使用期限切れのアラート通知を確認できます。
+
 [![Image from Gyazo](https://i.gyazo.com/d6696971a998faa270f02560c86a9211.gif)](https://gyazo.com/d6696971a998faa270f02560c86a9211)
 
 ## 4. 使用感のログ（マイ口コミ機能）
 コスメの詳細画面内で、コスメの使用感やその時の感想をメモすることが可能です。
 レーティング機能（☆1～5）とリピートしたいかどうかを毎回選択することができ、
 その時のリアルな使用感を書き留めておけます。
+
 [![Image from Gyazo](https://i.gyazo.com/797fa16da300b5dfb355ebf16380e68e.gif)](https://gyazo.com/797fa16da300b5dfb355ebf16380e68e)
 
 # アプリケーションを作成した背景
