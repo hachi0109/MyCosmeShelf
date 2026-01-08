@@ -17,6 +17,7 @@ https://my-cosme-shelf.onrender.com/
 # 利用方法
 ## 1. ユーザー登録
 トップページの「新規登録」から、ニックネーム・メールアドレス・パスワード・お好みのテーマカラーを入力して登録します。
+
 [![Image from Gyazo](https://i.gyazo.com/53b26bfa462fc58169b2d0f02d892558.gif)](https://gyazo.com/53b26bfa462fc58169b2d0f02d892558)
 
 ## 2. コスメの登録
