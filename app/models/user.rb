@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :comments, through: :cosmetics
 
   validates :theme_color_id, numericality: { other_than: 1 }
-  validates :name, :theme_color_id, presence: true
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :theme_color_id, presence: true
 end
