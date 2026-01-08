@@ -4,5 +4,6 @@ FactoryBot.define do
     email {Faker::Internet.email}
     password {Faker::Internet.password(min_length: 6)}
     password_confirmation {password}
+    theme_color_id {Faker::Number.between(from: 2, to: 5)}
   end
 end
