@@ -1,5 +1,6 @@
 # アプリケーション名
 My Cosme Shelf
+[![Image from Gyazo](https://i.gyazo.com/14c745787a1917135a19cb09c599012c.png)](https://gyazo.com/14c745787a1917135a19cb09c599012c)
 
 # アプリケーション概要
 自分が持っているコスメを写真付きで登録・管理できる「コスメ在庫管理アプリケーション」です。
