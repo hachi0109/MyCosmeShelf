@@ -78,3 +78,18 @@
     color: #888;
     line-height: 1.6;
   }
+
+  /* スマホ向けレスポンシブ設定 */
+  @media (max-width: 600px) {
+    .lp-btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px; 
+    }
+    .lp-btn {
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+  }
