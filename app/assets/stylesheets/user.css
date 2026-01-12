@@ -109,6 +109,19 @@
     border-radius: 4px;
   }
 
+  /* スマホ向けレスポンシブ設定 */
+  @media (max-width: 600px) {
+    .user-header {
+      display: flex;
+      flex-direction: column; /* 縦並びにする */
+      align-items: center;
+      gap: 10px; /* 上下の間隔 */
+    }
+    .user-nav {
+      font-size: 0.9rem; /* 文字サイズを少し小さくして収まりを良くする */
+    }
+  }
+
   /* ウェルカムセクション */
   .welcome-msg {
     margin: 40px 0 20px;
