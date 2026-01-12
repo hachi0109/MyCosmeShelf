@@ -246,6 +246,29 @@
   color: #ccc;
   }
 
+  /* スマホ向けレスポンシブ設定 */
+  @media (max-width: 600px) {
+    .recent-card {
+      display: flex;
+      align-items: center;
+    }
+    .card-image-wrapper {
+      width: 80px;
+      min-width: 80px;
+      height: 80px;
+      margin-right: 15px;
+    }
+    .cosme-image-preview, .no-image-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .recent-info {
+      flex: 1;
+      min-width: 0;
+    }
+  }
 
   /* 下部固定アクションボタン */
   .actions {
