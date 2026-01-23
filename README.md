@@ -62,6 +62,7 @@ https://my-cosme-shelf.onrender.com/
 - フロントエンド：HTML / CSS / JavaScript
 - バックエンド：Ruby / Ruby on Rails
 - データベース：MySQL（開発環境）/PostgreSQL（本番環境）
+- 画像保存：AWS　S3
 - インフラ：Render
 - エディタ：VSCode
 
